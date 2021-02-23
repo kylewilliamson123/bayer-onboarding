@@ -1,0 +1,42 @@
+/*
+styling.css
+------------
+Custom CSS styling for Bayer onboarding app
+*/
+
+.content {
+    padding: 1.5em;
+    border-radius: 0.4em;
+}
+
+/*
+Headings
+*/
+
+h1, h2, h3, h4 {
+    color: white;
+}
+
+
+/*
+Background color classes
+-------
+*/
+
+.bg-blue {
+    background: #0071bc;
+}
+
+.bg-orange {
+    background: #f7931e;
+}
+
+.bg-dark-blue {
+    background: #005ebc;
+    color: white;
+}
+
+.bg-dark-orange {
+    background: #f77e1e;
+    color: white;
+}
