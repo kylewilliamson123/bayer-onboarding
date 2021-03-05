@@ -9,6 +9,15 @@ Custom CSS styling for Bayer onboarding app
     border-radius: 0.4em;
 }
 
+.content label {
+    color: white;
+}
+
+label {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+
 /*
 Headings
 */
@@ -16,7 +25,6 @@ Headings
 h1, h2, h3, h4 {
     color: white;
 }
-
 
 /*
 Background color classes
