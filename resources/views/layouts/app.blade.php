@@ -38,7 +38,7 @@
                             <a class="nav-link" href="{{ url('/dashboard') }}">Onboards <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Finished</a>
+                            <a class="nav-link" href="{{ url('/finished') }}">Finished</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/form') }}">Add onboard</a>
