@@ -35,7 +35,7 @@ class CreateNewHiresTable extends Migration
             //used longText instead of varchar ude to size constrictions
             $table->longText('ManagerComments');
 
-            //
+            //The onborading partner to assist with helping the new hire
             $table->char('OnBoardingBuddy', 255); 
 
             //What type of hire it is, new hire or returning employee
