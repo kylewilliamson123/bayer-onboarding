@@ -35,8 +35,8 @@ class CreateNewHiresTable extends Migration
             //used longText instead of varchar ude to size constrictions
             $table->longText('ManagerComments');
 
-            //made 510 because First & Last Name data is 255 each
-            $table->char('OnBoardingBuddy', 510); 
+            //
+            $table->char('OnBoardingBuddy', 255); 
 
             //What type of hire it is, new hire or returning employee
             $table->char('HireType', 100);
@@ -54,9 +54,9 @@ class CreateNewHiresTable extends Migration
             $table->char('Leader', 255);
 
             //below are timestamps of completion for the New Hire
-            $table->timestamp('OBEmail');
-            $table->timestamp('DIPd');
-            $table->timestamp('ProdPlatformsStartDate');
+            $table->timestamp('OBEmail')->nullable();
+            $table->timestamp('DIPd')->nullable();
+            $table->timestamp('ProdPlatformsStartDate')->nullable();
 
             //2 Foreign Keys from Managers and one from Role
         });
