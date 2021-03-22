@@ -13,7 +13,7 @@ class CreateNewHiresTable extends Migration
      */
     public function up()
     {
-        Schema::create('_new_hires', function (Blueprint $table)
+        Schema::create('new_hires', function (Blueprint $table)
         {
             //standard ID of the newHire in the db
             $table->id();
@@ -69,6 +69,6 @@ class CreateNewHiresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_new_hires');
+        Schema::dropIfExists('new_hires');
     }
 }

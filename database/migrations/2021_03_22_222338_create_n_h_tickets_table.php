@@ -13,7 +13,7 @@ class CreateNHTicketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('_n_h_tickets', function (Blueprint $table)
+        Schema::create('n_h_tickets', function (Blueprint $table)
         {
             //default id for the NewHireTicket creation
             $table->id();
@@ -22,13 +22,16 @@ class CreateNHTicketsTable extends Migration
             $table->bigInteger('HTicketNumber');
 
             //The date that the form was created
-            $table->timestamp('Date');
+            $table->timestamp('Date')->nullable();
+
 
             //The date the newhire ticket was created
-            $table->timestamp('created_at');
+            $table->timestamp('created_at')->nullable();
+
 
             //the last time the new hire table was updated
-            $table->timestamp('updated_at');
+            $table->timestamp('updated_at')->nullable();
+
 
 
         });
@@ -41,6 +44,6 @@ class CreateNHTicketsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_n_h_tickets');
+        Schema::dropIfExists('n_h_tickets');
     }
 }

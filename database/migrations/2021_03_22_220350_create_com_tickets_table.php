@@ -18,17 +18,21 @@ class CreateComTicketsTable extends Migration
             //standard ID of the computer ticket in the database
             $table->id();
 
+            //the type of PC being recieved in the ticket
+            $table->char('PcType', 255);
+
             //The mac ticket of the computer ticket for the computer request
             $table->bigInteger('MAC Ticket');
 
             //timestamp of the date entered the computer ticket
-            $table->timestamp('DateEntered');
+            $table->timestamp('DateEntered')->nullable();
+
 
             //timestamp of the date of the laptop
-            $table->timestamp('LaptopDate');
+            $table->timestamp('LaptopDate')->nullable();
 
-            //the type of PC being recieved in the ticket
-            $table->char('PcType', 255);
+
+            
         });
     }
 
