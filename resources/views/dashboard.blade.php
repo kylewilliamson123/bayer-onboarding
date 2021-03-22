@@ -6,12 +6,12 @@
 
         <!-- Left Column -->    
         <div class="col-md-6 p-2">
-            <div class="content bg-orange">
+            <div class="content bg-blue">
             
             <h2>{{ Auth::user()->name }}'s Onboards</h2>
 
             <table class="table">
-                <thead class="bg-dark-orange">
+                <thead class="content bg-blue">
                     <th>Name</th>
                     <th>Region</th>
                 </thead>
