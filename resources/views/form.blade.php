@@ -22,11 +22,10 @@
                     <input type="text" name="region" class="form-control">
 
                     <label>Role</label>
-                    <Select>
+                    <Select class="w-100 h-50">
                     <option value="admin">admin</option>
                     <option value="programmer">programmer</option>
-                    
-                    <select>
+                    </select>
 
                     <input type="submit" class="btn btn-secondary mt-4 form-control" value="submit">
                 </form>

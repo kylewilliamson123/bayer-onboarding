@@ -8,7 +8,7 @@
         <div class="col-md-6 p-2">
             <div class="content bg-orange">
             
-            <h2>{{ Auth::user()->name }}'s Orders</h2>
+            <h2>{{ Auth::user()->name }}'s Onboards</h2>
 
             <table class="table">
                 <thead class="bg-dark-orange">
@@ -34,7 +34,7 @@
         <div class="col-md-6 p-2">
             <div class="content bg-blue">
             
-            <h2>All Orders</h2>
+            <h2>All Onboards</h2>
 
             <table class="table">
                 <thead class="bg-dark-blue">

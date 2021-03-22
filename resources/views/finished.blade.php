@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
 
         <!-- Left Column -->    
-        <div class="col-md-12 p-2">
+        <div class="col-md-8 p-2">
             <div class="bg-dark-blue">
             
-            <h2>{{ Auth::user()->name }}'s Orders</h2>
+            <h2>{{ Auth::user()->name }}'s Finished Onboards</h2>
 
             <table class="table">
             <thead class="bg-dark-blue">
@@ -34,7 +34,19 @@
 
             </div>
         </div>
-    
+        <div class="col-md-3 p-3">
+            <form method="GET" action="search.php">
+            <input type="text" placeholder="Filter" name="search"/>
+            <input type="submit" value="search">
+            </form>
+
+            <h3> </h3>
+
+            <form method="GET" action="search.php">
+            <input type="text"  placeholder="First Last Name" name="search"/>
+            <input type="submit" value="search">
+            </form>
+        </div>
     </div>
 </div>
 @endsection
