@@ -11,7 +11,7 @@
             <h2>{{ Auth::user()->name }}'s Onboards</h2>
 
             <table class="table">
-                <thead class="content bg-blue">
+                <thead class="bg-dark-blue">
                     <th>Name</th>
                     <th>Region</th>
                 </thead>
