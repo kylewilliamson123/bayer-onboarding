@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,7 +29,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/dashboard', 'DashboardController@index' )->name('dashboard');
 Route::get('/onboard', 'OnboardController@index')->name('onboard');
 Route::get('/form', 'FormController@index')->name('form');
 Route::get('/finished', 'FinishedController@index')->name('finished');
+
+//this route uses the index function in the UserController
+//Route::get('/dashboard','UserController@index');
+//this route uses the NH function in the NHController
+Route::get('/dashboard','NewHireController@newHireFunction');
+
