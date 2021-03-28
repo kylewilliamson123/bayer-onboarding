@@ -16,4 +16,13 @@ class NewHireController extends Controller
            'new_hires' => $new_hires,
        ]);
     }
+
+    //selects all newHire data and sends to onboard view
+    public function newHireOnboard(){
+        $new_hires = new_hire::all();
+
+        return view('onboard', [
+            'new_hires' => $new_hires,
+        ]);
+    }
 }

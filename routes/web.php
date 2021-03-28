@@ -38,4 +38,6 @@ Route::get('/finished', 'FinishedController@index')->name('finished');
 //Route::get('/dashboard','UserController@index');
 //this route uses the NH function in the NHController
 Route::get('/dashboard','NewHireController@newHireFunction');
+//route for new hire data to onboard blade
+Route::get('/onboard', 'NewHireController@newHireOnboard');
 

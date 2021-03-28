@@ -41,7 +41,12 @@
             
             </div>
         </div>
-    
+        @foreach ($new_hires as $new_hires)
+    <div>
+    {{$new_hires->FirstName}}
+    </div>
+    @endforeach
+
     </div>
 </div>
 @endsection
