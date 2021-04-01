@@ -29,6 +29,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-Route::get('/onboard', 'OnboardController@index')->name('onboard');
+Route::get('/onboard/{onboardId}', 'OnboardController@index')->name('onboard');
+
 Route::get('/form', 'FormController@index')->name('form');
+Route::post('/formSubmit', 'SubmitController@insert')->name('formSubmit');
+
 Route::get('/finished', 'FinishedController@index')->name('finished');

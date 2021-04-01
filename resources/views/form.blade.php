@@ -10,54 +10,51 @@
             <div class="content bg-blue">
             
                 <h2>Add New Onboard</h2>
-                <form>
+                <form action="{{ route('formSubmit', 0) }}" method="post">
                     @csrf
                     
-                    <label>First Name</label>
-                    <input type="text" name="first-name" class="form-control">
+                    <label for="first-name">First Name</label>
+                    <input id="first-name" type="text" name="first-name" class="form-control">
 
-                    <label>Last Name</label>
-                    <input type="text" name="last-name" class="form-control">
+                    <label for="last-name">Last Name</label>
+                    <input id="last-name" type="text" name="last-name" class="form-control">
 
-                    <label>Region</label>
-                    <input type="text" name="region" class="form-control">
+                    <label for="region">Region</label>
+                    <input id="region" type="text" name="region" class="form-control">
 
-                    <label>CWID</label>
-                    <input type="text" name="cwid" class="form-control">
+                    <label for="cwid">CWID</label>
+                    <input id="cwid" type="text" name="cwid" class="form-control">
 
-                    <label>Seat Location</label>
-                    <input type="text" name="seat-loc" class="form-control">
+                    <label for="seat-loc">Seat Location</label>
+                    <input id="seat-loc" type="text" name="seat-loc" class="form-control">
 
-                    <label>Manager</label>
-                    <input type="text" name="manager" class="form-control">
+                    <label for="manager">Manager</label>
+                    <input id="manager" type="text" name="manager" class="form-control">
 
-                    <label>Team Name</label>
-                    <input type="text" name="team-name" class="form-control">
+                    <label for="team-name">Team Name</label>
+                    <input id="team-name" type="text" name="team-name" class="form-control">
 
-                    <label>Hire Type</label>
-                    <input type="text" name="hire-type" class="form-control">
+                    <label for="hire-type">Hire Type</label>
+                    <input id="hire-type" type="text" name="hire-type" class="form-control">
     
-                    <label>Platform</label>
-                    <Select class="w-100 h-100">
-                    <option value="mac">Mac</option>
-                    <option value="windows">Windows</option>
-                    <option value="lenovo">Lenovo</option>
+                    <label for="platform">Platform</label>
+                    <select id="platform" class="form-control">
+                        <option value="mac">Mac</option>
+                        <option value="windows">Windows</option>
+                        <option value="lenovo">Lenovo</option>
                     </select>
 
-                    <label>Role</label>
-                    <Select class="w-100 h-50">
-                    <option value="admin">Admin</option>
-                    <option value="programmer">Programmer</option>
+                    <label for="">Role</label>
+                    <select class="form-control">
+                        <option value="admin">Admin</option>
+                        <option value="programmer">Programmer</option>
                     </select>
 
-                    <label>Manager Comments</label>
-                    <h3>
-                    </h3>
-                    <textarea rows="4" cols="66">
-                        
+                    <label for="">Manager Comments</label>
+                    <textarea class="form-control" rows="5">
                     </textarea>
 
-                    <input type="submit" class="btn btn-secondary mt-4 form-control" value="submit">
+                    <input type="submit" class="btn btn-secondary mt-4 form-control" value="Submit">
                 </form>
 
 
