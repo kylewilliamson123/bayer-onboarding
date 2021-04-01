@@ -29,15 +29,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/dashboard', 'DashboardController@index' )->name('dashboard');
-Route::get('/onboard', 'OnboardController@index')->name('onboard');
-Route::get('/form', 'FormController@index')->name('form');
-Route::get('/finished', 'FinishedController@index')->name('finished');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/onboard/{onboardId}', 'OnboardController@index')->name('onboard');
 
-//this route uses the index function in the UserController
-//Route::get('/dashboard','UserController@index');
-//this route uses the NH function in the NHController
-Route::get('/dashboard','NewHireController@newHireFunction');
-//route for new hire data to onboard blade
-Route::get('/onboard', 'NewHireController@newHireOnboard');
+Route::get('/form', 'FormController@index')->name('form');
+Route::post('/formSubmit', 'SubmitController@insert')->name('formSubmit');
+
+Route::get('/finished', 'FinishedController@index')->name('finished');
 

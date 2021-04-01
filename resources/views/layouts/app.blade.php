@@ -34,13 +34,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item {{ Request::is('dashboard') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ url('/dashboard') }}">Onboards <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{ Request::is('finished') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ url('/finished') }}">Finished</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {{ Request::is('form') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ url('/form') }}">Add onboard</a>
                         </li>
                     </ul>
