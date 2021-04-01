@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,3 +36,4 @@ Route::get('/form', 'FormController@index')->name('form');
 Route::post('/formSubmit', 'SubmitController@insert')->name('formSubmit');
 
 Route::get('/finished', 'FinishedController@index')->name('finished');
+
