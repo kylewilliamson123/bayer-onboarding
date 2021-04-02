@@ -21,12 +21,12 @@ class OnboardController extends Controller
         // Make the id of the onboard accessable to the class
         $this->onboardId = $onboardId;
 
-        // Get the new hire where the onboard id is equal to the new hire's id
-        $new_hires = new_hire::where('id', '=', $this->onboardId);
+        // Get the new hire data where table row is equal to the url's id
+        $new_hire = new_hire::where('id', '=', $this->onboardId)->first();
 
         // Return the view
         return view('onboard', [
-            'new_hires' => $new_hires,
+            'new_hire' => $new_hire,
         ]);
     }
 }

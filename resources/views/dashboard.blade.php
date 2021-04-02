@@ -12,18 +12,26 @@
 
             <table class="table">
                 <thead class="bg-dark-blue">
-                    <th>Name</th>
+                    <th></th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>CWID</th>
                     <th>Region</th>
                 </thead>
                 <tbody class="bg-light">
-                    <tr>
-                        <td>Elon Musk</td>
-                        <td>South Africa</td>
-                    </tr>
-                    <tr>
-                        <td>Elon Musk</td>
-                        <td>South Africa</td>
-                    </tr>
+                    @foreach ($new_hires as $new_hire)
+                        <tr>
+                            <td>
+                                <a href="{{ route('onboard', $new_hire->id) }}" class="btn btn-sm btn-secondary p-0">
+                                    <span style="font-size: 1.5em;" class="material-icons p-1">launch</span>
+                                </a>
+                            </td>
+                            <td>{{ $new_hire->FirstName }}</td>
+                            <td>{{ $new_hire->LastName }}</td>
+                            <td>{{ $new_hire->CWID }}</td>
+                            <td>{{ $new_hire->Region }}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
 
@@ -55,20 +63,9 @@
 
             </div>
         </div>
-  
-<!-- Loops through new_hires table and outputs all FirstName records -->
-    @foreach ($new_hires as $new_hires)
-    <div>
-    {{$new_hires->FirstName}} - {{$new_hires->LastName}} - {{$new_hires->CWID}} - {{$new_hires->Region}} - {{$new_hires->SeatNum}} 
-    - {{$new_hires->ManagerComments}} - {{$new_hires->HireType}} - {{$new_hires->HireStatus}} - {{$new_hires->Platform}} - {{$new_hires->TeamName}} - {{$new_hires->Leader}}
-    
-    </div>
-    @endforeach
 
 
     </div>
 </div>
-
-
 
 @endsection
