@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\new_hire;
 
 class DashboardController extends Controller
 {
@@ -24,6 +25,13 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        //selects all newHire data and stores in a variable
+        $new_hires = new_hire::all();
+       
+        //returns the data to the dashboard view
+        return view('dashboard', [
+           'new_hires' => $new_hires,
+        ]);
+
     }
 }
