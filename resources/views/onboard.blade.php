@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 
-    <form method="post" action="{{ route('onboardSubmit', $new_hire->id) }}">
+    <form method="post" action="{{ action('OnboardSubmitController@update', $new_hire->id) }}">
         @csrf
     
         <div class="row justify-content-center">
@@ -116,14 +116,20 @@
                 <h2>Controls</h2>
 
                 <input type="submit" class="btn btn-light" value="Save Changes">
-                <a class="btn btn-danger">Delete Record</a>
+                
+                </form><!-- Gross place to end form but it works -->
+
+                <form method="post" action="{{ action('OnboardSubmitController@delete', $new_hire->id) }}">
+                    @csrf
+                    <input type="submit" class="btn btn-danger" value="Delete Record">
+                </form>
                 
                 </div>
             </div>
 
         </div>
 
-    </form>
+    
 
 </div>
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\new_hire;
 use Illuminate\Http\Request;
 use DB;
 
@@ -11,7 +12,7 @@ class SubmitController extends Controller
     public function insert()
     {
 
-        DB::table('new_hires')->insert([
+        new_hire::insert([
             'CWID' => $_POST['cwid'],
             'Region' => $_POST['region'],
             'FirstName' => $_POST['first-name'],
