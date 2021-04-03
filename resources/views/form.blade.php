@@ -10,7 +10,7 @@
             <div class="content bg-blue">
             
                 <h2>Add New Onboard</h2>
-                <form action="{{ route('formSubmit', 0) }}" method="post">
+                <form action="{{ route('formSubmit') }}" method="post">
                     @csrf
                     
                     <label for="first-name">First Name</label>

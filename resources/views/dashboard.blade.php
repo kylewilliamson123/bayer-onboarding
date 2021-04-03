@@ -22,20 +22,13 @@
 
             <table class="table">
                 <thead class="bg-dark-blue">
-                    <th>Name</th>
+                    <th></th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>CWID</th>
                     <th>Region</th>
                 </thead>
                 <tbody class="bg-light">
-<<<<<<< Updated upstream
-                    <tr>
-                        <td>Elon Musk</td>
-                        <td>South Africa</td>
-                    </tr>
-                    <tr>
-                        <td>Elon Musk</td>
-                        <td>South Africa</td>
-                    </tr>
-=======
                     @foreach ($allNewHires as $newHire)
                         <tr>
                             <td>
@@ -49,7 +42,6 @@
                             <td>{{ $newHire->Region }}</td>
                         </tr>
                     @endforeach
->>>>>>> Stashed changes
                 </tbody>
             </table>
 
@@ -64,20 +56,13 @@
             
             <table class="table">
                 <thead class="bg-dark-blue">
-                    <th>Name</th>
+                    <th></th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>CWID</th>
                     <th>Region</th>
                 </thead>
                 <tbody class="bg-light">
-<<<<<<< Updated upstream
-                    <tr>
-                        <td>Elon Musk</td>
-                        <td>South Africa</td>
-                    </tr>
-                    <tr>
-                        <td>Elon Musk</td>
-                        <td>South Africa</td>
-                    </tr>
-=======
                     @foreach ($allNewHires as $newHire)
                         <tr>
                             <td>
@@ -91,26 +76,14 @@
                             <td>{{ $newHire->Region }}</td>
                         </tr>
                     @endforeach
->>>>>>> Stashed changes
                 </tbody>
             </table>
 
             </div>
         </div>
-  
-<!-- Loops through new_hires table and outputs all FirstName records -->
-    @foreach ($new_hires as $new_hires)
-    <div>
-    {{$new_hires->FirstName}} - {{$new_hires->LastName}} - {{$new_hires->CWID}} - {{$new_hires->Region}} - {{$new_hires->SeatNum}} 
-    - {{$new_hires->ManagerComments}} - {{$new_hires->HireType}} - {{$new_hires->HireStatus}} - {{$new_hires->Platform}} - {{$new_hires->TeamName}} - {{$new_hires->Leader}}
-    
-    </div>
-    @endforeach
 
 
     </div>
 </div>
-
-
 
 @endsection

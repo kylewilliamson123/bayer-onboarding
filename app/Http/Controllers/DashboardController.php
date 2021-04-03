@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\new_hire;
 
 class DashboardController extends Controller
 {
@@ -18,17 +19,14 @@ class DashboardController extends Controller
     // Show the application dashboard
     public function index()
     {
-<<<<<<< Updated upstream
-        return view('dashboard');
-=======
-        
+
         //returns the data to the dashboard view
         return view('dashboard', [
            'allNewHires' => new_hire::all(),
            //'userNewHires' => new_hire::where('admin', '=', Auth::user()->name),
            'popup' => session()->get( 'popup' ),
         ]);
->>>>>>> Stashed changes
+        
     }
 
 }

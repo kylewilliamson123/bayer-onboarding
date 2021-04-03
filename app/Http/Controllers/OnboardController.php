@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\new_hire;
 
 class OnboardController extends Controller
 {
@@ -15,10 +16,6 @@ class OnboardController extends Controller
     }
 
 
-<<<<<<< Updated upstream
-        // Return the view
-        return view('onboard');
-=======
     // Get array of data related to the onboard
     public function getOnboardData($id)
     {
@@ -37,6 +34,5 @@ class OnboardController extends Controller
             'popup' => session()->get( 'popup' ),
         ]);
 
->>>>>>> Stashed changes
     }
 }
