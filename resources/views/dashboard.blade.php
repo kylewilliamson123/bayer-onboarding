@@ -2,6 +2,16 @@
 
 @section('content')
 <div class="container">
+
+    @if ($popup != null)
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{ $popup }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
     <div class="row justify-content-center">
 
         <!-- Left Column -->    
@@ -16,6 +26,7 @@
                     <th>Region</th>
                 </thead>
                 <tbody class="bg-light">
+<<<<<<< Updated upstream
                     <tr>
                         <td>Elon Musk</td>
                         <td>South Africa</td>
@@ -24,6 +35,21 @@
                         <td>Elon Musk</td>
                         <td>South Africa</td>
                     </tr>
+=======
+                    @foreach ($allNewHires as $newHire)
+                        <tr>
+                            <td>
+                                <a href="{{ route('onboard', $newHire->id) }}" class="btn btn-sm btn-secondary p-0">
+                                    <span style="font-size: 1.5em;" class="material-icons p-1">launch</span>
+                                </a>
+                            </td>
+                            <td>{{ $newHire->FirstName }}</td>
+                            <td>{{ $newHire->LastName }}</td>
+                            <td>{{ $newHire->CWID }}</td>
+                            <td>{{ $newHire->Region }}</td>
+                        </tr>
+                    @endforeach
+>>>>>>> Stashed changes
                 </tbody>
             </table>
 
@@ -42,6 +68,7 @@
                     <th>Region</th>
                 </thead>
                 <tbody class="bg-light">
+<<<<<<< Updated upstream
                     <tr>
                         <td>Elon Musk</td>
                         <td>South Africa</td>
@@ -50,6 +77,21 @@
                         <td>Elon Musk</td>
                         <td>South Africa</td>
                     </tr>
+=======
+                    @foreach ($allNewHires as $newHire)
+                        <tr>
+                            <td>
+                                <a href="{{ route('onboard', $newHire->id) }}" class="btn btn-sm btn-secondary p-0">
+                                    <span style="font-size: 1.5em;" class="material-icons p-1">launch</span>
+                                </a>
+                            </td>
+                            <td>{{ $newHire->FirstName }}</td>
+                            <td>{{ $newHire->LastName }}</td>
+                            <td>{{ $newHire->CWID }}</td>
+                            <td>{{ $newHire->Region }}</td>
+                        </tr>
+                    @endforeach
+>>>>>>> Stashed changes
                 </tbody>
             </table>
 

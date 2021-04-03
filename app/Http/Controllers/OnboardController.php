@@ -6,21 +6,37 @@ use Illuminate\Http\Request;
 
 class OnboardController extends Controller
 {
-    private $onboardId;
 
+    // Construct, check if authenticated
     public function __construct()
     {
         // Require authorization to view route
         $this->middleware('auth');
     }
 
-    
-    public function index($onboardId)
-    {
-        // Make the id of the onboard accessable to the class
-        $this->onboardId = $onboardId;
 
+<<<<<<< Updated upstream
         // Return the view
         return view('onboard');
+=======
+    // Get array of data related to the onboard
+    public function getOnboardData($id)
+    {
+        // Get the new hire data where table row is equal to the url's id
+        $data = new_hire::where('id', '=', $id)->first();
+        return $data;
+    }
+    
+
+    public function index($id)
+    {
+
+        // Return the view with relevant data
+        return view('onboard', [
+            'newHire' => $this->getOnboardData($id),
+            'popup' => session()->get( 'popup' ),
+        ]);
+
+>>>>>>> Stashed changes
     }
 }

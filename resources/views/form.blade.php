@@ -25,8 +25,8 @@
                     <label for="cwid">CWID</label>
                     <input id="cwid" type="text" name="cwid" class="form-control">
 
-                    <label for="seat-loc">Seat Location</label>
-                    <input id="seat-loc" type="text" name="seat-loc" class="form-control">
+                    <label for="seat-loc">Seat Number</label>
+                    <input id="seat-loc" type="number" name="seat-loc" class="form-control">
 
                     <label for="manager">Manager</label>
                     <input id="manager" type="text" name="manager" class="form-control">

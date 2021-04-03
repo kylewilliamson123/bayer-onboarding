@@ -30,7 +30,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+<<<<<<< Updated upstream
 Route::get('/onboard/{onboardId}', 'OnboardController@index')->name('onboard');
+=======
+
+// Onboard routes
+Route::get('/onboard/{id}', 'OnboardController@index')->name('onboard');
+Route::post('/onboardUpdate/{id}', 'OnboardSubmitController@update')->name('onboardUpdate');
+Route::post('/onboardDelete/{id}', 'OnboardSubmitController@delete')->name('onboardDelete');
+>>>>>>> Stashed changes
 
 Route::get('/form', 'FormController@index')->name('form');
 Route::post('/formSubmit', 'SubmitController@insert')->name('formSubmit');
