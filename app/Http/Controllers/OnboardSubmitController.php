@@ -27,6 +27,7 @@ class OnboardSubmitController extends Controller
         $onboard->Platform = $_POST['Platform'];
         $onboard->TeamName = $_POST['TeamName'];
         $onboard->Leader = $_POST['Leader'];
+        $onboard->AssignedTo = $_POST['AssignedTo'];
 
         // Save the changes
         $onboard->save();

@@ -18,7 +18,7 @@
         <div class="row justify-content-center">
 
             <!-- Left Column -->
-            <div class="col-md-10 p-2">
+            <div class="col-md-9 p-2">
 
 
                 <!-- First content box -->
@@ -113,17 +113,29 @@
 
 
             <!-- Right Column -->
-            <div class="col-md-2 p-2">
+            <div class="col-md-3 p-2">
                 <div class="content bg-blue">
-                    <h2>Controls</h2>
+                    <h4>Admin Controls</h4>
                     <hr class="bg-light">
 
-                    <input type="submit" class="btn btn-light mb-2 w-100" value="Save Changes">
+                    <label for="AssignedTo">Assigned to:</label>
+                    <select name="AssignedTo" id="AssignedTo" class="form-control mb-2">
+                        @foreach ($admins as $admin)
+                            <option value="{{ $admin }}" 
+                            @if ($admin == $newHire->AssignedTo)
+                                selected
+                            @endif
+                            >{{ $admin }}</option>
+                        @endforeach
+                    </select>
+
+                    <input type="submit" class="btn btn-light mb-2 w-100" value="Save All Changes">
                     <button type="button" class="btn btn-danger w-100" data-toggle="modal" data-target="#deleteConfirmModal">
                         Delete
                     </button>
                 </div>
             </div>
+
         </div>
 
     </form>
