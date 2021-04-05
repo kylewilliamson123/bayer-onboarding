@@ -23,7 +23,7 @@ class AddSeveralColumnsToNewHiresTable extends Migration
             $table->char('Gender', 50)->nullable();
 
             //add the vendor field
-            $table->string('Vendor',255);
+            $table->char('Vendor',255)->nullable();
 
             //The OB timestamp was added in a previous migration
 
