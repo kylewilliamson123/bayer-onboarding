@@ -28,6 +28,10 @@ class SubmitController extends Controller
             'DIPd' => '2014-06-26 04:07:31',
             'ProdPlatformsStartDate' => '2014-06-26 04:07:31',
             'AssignedTo' => Auth::user()->name,
+            'role_id' => 1,
+            'manager_id' => 1,
+            'role_id' => 1,
+            'user_id' => 1,
         ]);
 
         return redirect('/dashboard');
