@@ -16,8 +16,14 @@
                     <label for="first-name">First Name</label>
                     <input id="first-name" type="text" name="first-name" class="form-control">
 
+                    <label for="middle-name">Middle Name</label>
+                    <input id="middle-name" type="text" name="middle-name" class="form-control">
+
                     <label for="last-name">Last Name</label>
                     <input id="last-name" type="text" name="last-name" class="form-control">
+
+                    <label for="gender">Gender</label>
+                    <input id="gender" type="text" name="gender" class="form-control">
 
                     <label for="region">Region</label>
                     <input id="region" type="text" name="region" class="form-control">
@@ -36,6 +42,14 @@
 
                     <label for="hire-type">Hire Type</label>
                     <input id="hire-type" type="text" name="hire-type" class="form-control">
+
+                    <label for="vendor">Vendor</label>
+                    <select id="vendor" class="form-control">
+                        <option value="scranton">Scranton</option>
+                        <option value="service-provider">Service Provider</option>
+                        <option value="nbc">NBC</option>
+                        <option value="na">N/A</option>
+                    </select>
     
                     <label for="platform">Platform</label>
                     <select id="platform" class="form-control">
