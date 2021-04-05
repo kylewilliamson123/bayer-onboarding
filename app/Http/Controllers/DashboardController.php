@@ -16,17 +16,38 @@ class DashboardController extends Controller
     }
 
 
+    // Get all onboards that are open
+    public function getOpenOnboards()
+    {
+        $data = new_hire::where('CompletionStatus', 'LIKE', 'Open')->get();
+        return $data;
+    }
+
+
+    // Get all open onboards assigned to the authenticated user
+    public function getOpenUserOnboards()
+    {
+        $data = new_hire::where([
+            ['AssignedTo', '=', Auth::user()->name],
+            ['CompletionStatus', '=', 'Open']
+        ])->get();
+        return $data;
+    }
+
+
+    
+
+
     // Show the application dashboard
     public function index()
     {
-
         //returns the data to the dashboard view
         return view('dashboard', [
-           'allNewHires' => new_hire::all(),
-           //'userNewHires' => new_hire::where('admin', '=', Auth::user()->name),
+           'allNewHires' => $this->getOpenOnboards(),
+           'userNewHires' => $this->getOpenUserOnboards(),
            'popup' => session()->get( 'popup' ),
         ]);
-        
+
     }
 
 }

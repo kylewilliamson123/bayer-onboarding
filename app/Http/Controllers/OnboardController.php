@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\new_hire;
+use App\User;
 
 class OnboardController extends Controller
 {
@@ -23,6 +24,14 @@ class OnboardController extends Controller
         $data = new_hire::where('id', '=', $id)->first();
         return $data;
     }
+
+
+    // Get all users
+    public function getAllAdmins()
+    {
+        $admins = User::all()->pluck('name');
+        return $admins;
+    }
     
 
     public function index($id)
@@ -32,6 +41,7 @@ class OnboardController extends Controller
         return view('onboard', [
             'newHire' => $this->getOnboardData($id),
             'popup' => session()->get( 'popup' ),
+            'admins' => $this->getAllAdmins()
         ]);
 
     }

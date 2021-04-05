@@ -29,7 +29,7 @@
                     <th>Region</th>
                 </thead>
                 <tbody class="bg-light">
-                    @foreach ($allNewHires as $newHire)
+                    @foreach ($userNewHires as $newHire)
                         <tr>
                             <td>
                                 <a href="{{ route('onboard', $newHire->id) }}" class="btn btn-sm btn-secondary p-0">
