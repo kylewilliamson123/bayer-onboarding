@@ -16,4 +16,28 @@ class FinishedController extends Controller
     {
         return view('finished');
     }
+
+    public function search()
+    {
+        //grab the search in a variable
+        $search = Input::get ("search");
+
+        //the loop to store the results in $results
+        $results = TestModel::where ('name','LIKE','%'.$search .'%')
+        ->orWhere('email','LIKE','%'.$search.'%')
+        ->get();
+
+    //if there is more than 1 result, display
+    if (count ($results) > 0)
+    {
+        
+        return view('search')->withDetails($results)->withQuery($search);
+    }
+    //if there is no results, return this message 
+    else
+    {
+        return view('search')->withMessage('No Results found.');		
+    }
+    }
 }
+
