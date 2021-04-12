@@ -20,11 +20,12 @@ class FinishedController extends Controller
     public function search()
     {
         //grab the search in a variable
-        $search = Input::get ("search");
+        $search = Input::get("search");
 
         //the loop to store the results in $results
-        $results = TestModel::where ('name','LIKE','%'.$search .'%')
-        ->orWhere('email','LIKE','%'.$search.'%')
+        $results = new_hires::where('FirstName','LIKE','%'.$search .'%')
+        ->orWhere('LastName','LIKE','%'.$search.'%')
+        ->orWhere('CWID','=',$search)
         ->get();
 
         //if there is more than 1 result, display
