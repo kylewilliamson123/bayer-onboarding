@@ -27,9 +27,11 @@ class FinishedController extends Controller
         //the loop to store the results in $results
         $results = new_hire::where('FirstName','LIKE','%'.$search .'%')
         ->orWhere('LastName','LIKE','%'.$search.'%')
-        ->orWhere('CWID','=',$search)
-        ->first();
-        die($results);
+        ->orWhere('CWID','=',$search);
+
+        //to test, add this to the where search above
+        //->first();
+        //die($results);
 
         //if there is more than 1 result, display
         if (count ($results) > 0)
