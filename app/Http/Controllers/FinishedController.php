@@ -27,17 +27,16 @@ class FinishedController extends Controller
         ->orWhere('email','LIKE','%'.$search.'%')
         ->get();
 
-    //if there is more than 1 result, display
-    if (count ($results) > 0)
-    {
+        //if there is more than 1 result, display
+        if (count ($results) > 0)
+        {
         
-        return view('search')->withDetails($results)->withQuery($search);
-    }
-    //if there is no results, return this message 
-    else
-    {
-        return view('search')->withMessage('No Results found.');		
-    }
-    }
-}
+            return view('search')->withDetails($results)->withQuery($search);
+        }
+        //if there is no results, return this message 
+        else
+        {
+            return view('search')->withMessage('No Results found.');
+        }
+    }// end search
 
