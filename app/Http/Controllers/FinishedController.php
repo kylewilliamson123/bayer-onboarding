@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\new_hire;
 use Illuminate\Http\Request;
+use Symfony\Component\Console\Input\Input;
 
 class FinishedController extends Controller
 {
@@ -17,27 +19,29 @@ class FinishedController extends Controller
         return view('finished');
     }
 
-    public function search()
+    public function search(Request $request)
     {
         //grab the search in a variable
-        $search = Input::get("search");
+        $search = $request->input("search");
 
         //the loop to store the results in $results
-        $results = new_hires::where('FirstName','LIKE','%'.$search .'%')
+        $results = new_hire::where('FirstName','LIKE','%'.$search .'%')
         ->orWhere('LastName','LIKE','%'.$search.'%')
         ->orWhere('CWID','=',$search)
-        ->get();
+        ->first();
+        die($results);
 
         //if there is more than 1 result, display
         if (count ($results) > 0)
         {
         
-            return view('search')->withDetails($results)->withQuery($search);
+            return view('finished')->withDetails($results)->withQuery($search);
         }
         //if there is no results, return this message 
         else
         {
-            return view('search')->withMessage('No Results found.');
+            return view('finished')->withMessage('No Results found.');
+            
         }
     }// end search
 }

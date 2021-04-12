@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" action="{{ action('FinishedController@search')}}">
+<div class="container" >
     <div class="row justify-content-center">
 
         <!-- Left Column -->    
@@ -10,9 +10,9 @@
             
                 <h2>Finished Onboards</h2>
 
-                <form method="GET" action="search.php">
+                <form method="GET"  action="{{ action('FinishedController@search')}}">
                     <div class="input-group w-50">
-                        <input type="text" class="form-control" placeholder="Filter" name="Search"/>
+                        <input type="text" class="form-control" placeholder="Filter" name="search"/>
                         <input type="submit" class="btn btn-secondary" value="search">
                     </div>
                 </form>
