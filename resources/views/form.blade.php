@@ -2,15 +2,16 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <form action="{{ route('formSubmit') }}" method="post">
+        <div class="row justify-content-center">
         
         
         <!-- Left Column -->    
-        <div class="col-md-4 ">
-            <div class="content bg-blue">
+            <div class="col-md-4 ">
+             <div class="content bg-blue">
             
                 <h2>Basic Information</h2>
-                <form action="{{ route('formSubmit') }}" method="post">
+               
                     @csrf
                     
                     <label for="first-name">First Name</label>
@@ -28,12 +29,6 @@
                     <label for="region">Region</label>
                     <input id="region" type="text" name="region" class="form-control">
 
-                    
-
-                    
-                </form>
-
-
             </div>
         </div>
         
@@ -41,7 +36,7 @@
         <div class="col-md-4">
             <div class="content bg-blue">
                 <h3>Onboard Information</h3>
-                    <form action="{{ route('formSubmit') }}" method="post">
+                  
                     @csrf
 
                     
@@ -64,14 +59,14 @@
                     <label for="manager-comments">Manager Comments</label>
                     <textarea class="form-control" rows="5">
                     </textarea>
-                    </form>
+                    
         </div>
         </div>
 
         <div class="col-md-4">
             <div class="content bg-blue">
                 <h3>Job Information</h3>
-                    <form action="{{ route('formSubmit') }}" method="post">
+                  
                     @csrf
 
                     <label for="team-name">Team Name</label>
@@ -99,10 +94,11 @@
                     </select>
 
                     <input type="submit" class="btn btn-secondary mt-4 form-control" value="Submit">
-                    </form>
+                    
                     </div>
                     </div>
-    </div>
+        </div>
+    </form>
 </div>
 @endsection
 

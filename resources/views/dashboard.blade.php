@@ -15,7 +15,7 @@
     <div class="row justify-content-center">
 
         <!-- Left Column -->    
-        <div class="col-md-6 p-2">
+        <div class="col-md-5 p-2">
             <div class="content bg-blue">
             
             <h2>{{ Auth::user()->name }}'s Onboards</h2>
@@ -49,7 +49,7 @@
         </div>
         
         <!-- Right Column -->
-        <div class="col-md-6 p-2">
+        <div class="col-md-5 p-2">
             <div class="content bg-blue">
             
             <h2>All Onboards</h2>
@@ -81,7 +81,13 @@
 
             </div>
         </div>
-
+        <div class="col-md-2 p-2">
+            
+            <label for="date">Search Date:</label>
+            <input type="date" id="birthday" name="birthday">
+            <input type="submit">
+        
+    </div>
 
     </div>
 </div>
