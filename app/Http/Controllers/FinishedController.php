@@ -39,4 +39,4 @@ class FinishedController extends Controller
             return view('search')->withMessage('No Results found.');
         }
     }// end search
-
+}
