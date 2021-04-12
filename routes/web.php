@@ -43,3 +43,4 @@ Route::post('/formSubmit', 'SubmitController@insert')->name('formSubmit');
 
 // Finished onboard routes
 Route::get('/finished', 'FinishedController@index')->name('finished');
+Route::get('/finishedsearch', 'FinishedController@search')->name('finished');
