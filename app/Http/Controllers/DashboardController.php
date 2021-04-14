@@ -44,7 +44,7 @@ class DashboardController extends Controller
         //returns the data to the dashboard view
         return view('dashboard', [
            'allNewHires' => $this->getOpenOnboards(),
-           'userNewHires' => $this->getOpenUserOnboards(),
+           'userNewHires'=> $this->getOpenUserOnboards(),
            'popup' => session()->get( 'popup' ),
         ]);
 
