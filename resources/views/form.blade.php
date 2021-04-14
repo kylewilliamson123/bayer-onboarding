@@ -76,7 +76,11 @@
                     <input id="seat-loc" type="number" name="seat-loc" class="form-control">
 
                     <label for="manager">Manager</label>
-                    <input id="manager" type="text" name="manager" class="form-control">
+                    <select name="manager" class="form-control">
+                        @foreach ($managers as $manager)
+                            <option value="{{ $manager->id }}">{{ $manager->Name }}</option>
+                        @endforeach
+                    </select>
 
 
                     <label for="vendor">Vendor</label>
@@ -87,10 +91,11 @@
                         <option value="na">N/A</option>
                     </select>
 
-                    <label for="">Role</label>
-                    <select class="form-control">
-                        <option value="admin">Admin</option>
-                        <option value="programmer">Programmer</option>
+                    <label for="role">Role</label>
+                    <select name="role" class="form-control">
+                        @foreach ($roles as $role)
+                            <option value="{{ $role->id }}">{{ $role->position }}</option>
+                        @endforeach
                     </select>
 
                     <input type="submit" class="btn btn-secondary mt-4 form-control" value="Submit">
