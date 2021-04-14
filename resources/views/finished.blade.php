@@ -40,7 +40,6 @@
                                 <td>{{ $newHire->Region }}</td>
                             </tr>
                         @endforeach
-                        @php    $searchResults = []; @endphp
                     @endisset
                     </tbody>
                 </table>
