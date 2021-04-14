@@ -30,18 +30,19 @@
                             <th>Value</th>
                         </thead>
                         <tbody class="bg-light">
-                            <tr>
-                                <td>First Name</td>
-                                <td><input name="FirstName" type="text" value="{{ $newHire->FirstName }}"></td>
-                            </tr>
-                            <tr>
-                                <td>Last Name</td>
-                                <td><input name="LastName" type="text" value="{{ $newHire->LastName }}"></td>
-                            </tr>
-                            <tr>
-                                <td>Region</td>
-                                <td><input name="Region" type="text" value="{{ $newHire->Region }}"></td>
-                            </tr>
+                        @foreach ($userNewHires as $newHire)
+                        <tr>
+                            <td>
+                                <a href="{{ route('onboard', $newHire->id) }}" class="btn btn-sm btn-secondary p-0">
+                                    <span style="font-size: 1.5em;" class="material-icons p-1">launch</span>
+                                </a>
+                            </td>
+                            <td>{{ $newHire->FirstName }}</td>
+                            <td>{{ $newHire->LastName }}</td>
+                            <td>{{ $newHire->CWID }}</td>
+                            <td>{{ $newHire->Region }}</td>
+                        </tr>
+                    @endforeach
                         </tbody>
                     </table>
                 </div>

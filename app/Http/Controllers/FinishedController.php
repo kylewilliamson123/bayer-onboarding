@@ -14,15 +14,17 @@ class FinishedController extends Controller
     }
 
     
-    public function index()
+    public function index(Request $request)
     {
-        return view('finished');
+        $search = $request->input("search");
+        return view('finished',
+        [
+            'searchResults' => $this-> search($search)]);
     }
 
-    public function search(Request $request)
+    public function search($search)
     {
         //grab the search in a variable
-        $search = $request->input("search");
 
         //the loop to store the results in $results
         $results = new_hire::where('FirstName','LIKE','%'.$search .'%')
@@ -30,14 +32,14 @@ class FinishedController extends Controller
         ->orWhere('CWID','LIKE','%'.$search.'%')->get();
 
         //if there is more than 1 result, display
-        if(is_array($results))
+        if(isset($results))
         {
-            return view('finished')->withDetails($results)->withQuery($search);
+            return $results;
         }
         //if there is no results, return this message 
         else
         {
-            return view('finished')->withMessage('No Results found.');
+            return false;
         }
     }// end search
 }
