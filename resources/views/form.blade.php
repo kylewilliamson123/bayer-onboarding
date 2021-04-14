@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
+
 @section('content')
+
+
+
 <div class="container">
     <form action="{{ route('formSubmit') }}" method="post">
         <div class="row justify-content-center">
@@ -15,19 +19,19 @@
                     @csrf
                     
                     <label for="first-name">First Name</label>
-                    <input id="first-name" type="text" name="first-name" class="form-control">
+                    <input id="first-name" type="text" name="first-name" class="form-control" required>
 
                     <label for="middle-name">Middle Name</label>
                     <input id="middle-name" type="text" name="middle-name" class="form-control">
 
                     <label for="last-name">Last Name</label>
-                    <input id="last-name" type="text" name="last-name" class="form-control">
+                    <input id="last-name" type="text" name="last-name" class="form-control" required>
 
                     <label for="gender">Gender</label>
                     <input id="gender" type="text" name="gender" class="form-control">
 
                     <label for="region">Region</label>
-                    <input id="region" type="text" name="region" class="form-control">
+                    <input id="region" type="text" name="region" class="form-control" required>
 
             </div>
         </div>
@@ -41,13 +45,13 @@
 
                     
                     <label for="cwid">CWID</label>
-                    <input id="cwid" type="text" name="cwid" class="form-control">
+                    <input id="cwid" type="text" name="cwid" class="form-control" required>
 
                     <label for="hire-type">Hire Type</label>
-                    <input id="hire-type" type="text" name="hire-type" class="form-control">
+                    <input id="hire-type" type="text" name="hire-type" class="form-control" required>
 
                     <label for="hire-status">Hire Status</label>
-                    <input id="cwid" type="text" name="cwid" class="form-control">
+                    <input id="cwid" type="text" name="cwid" class="form-control" required>
 
                     <label for="platform">Platform</label>
                     <select id="platform" class="form-control">
@@ -70,10 +74,10 @@
                     @csrf
 
                     <label for="team-name">Team Name</label>
-                    <input id="team-name" type="text" name="team-name" class="form-control">
+                    <input id="team-name" type="text" name="team-name" class="form-control" required>
       
                     <label for="seat-loc">Seat Number</label>
-                    <input id="seat-loc" type="number" name="seat-loc" class="form-control">
+                    <input id="seat-loc" type="number" name="seat-loc" class="form-control" required>
 
                     <label for="manager">Manager</label>
                     <select name="manager" class="form-control">
@@ -105,6 +109,7 @@
         </div>
     </form>
 </div>
+
 @endsection
 
 
