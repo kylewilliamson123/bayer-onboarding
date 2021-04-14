@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\new_hire;
 use Illuminate\Http\Request;
-use Symfony\Component\Console\Input\Input;
 
 class FinishedController extends Controller
 {
