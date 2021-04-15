@@ -84,7 +84,7 @@
         <div class="col-md-2 p-2">
             
             <label for="date">Search Date:</label>
-            <input type="date" id="birthday" name="birthday">
+            <input type="date" id="startdate" name="startdate">
             <input type="submit">
         
     </div>

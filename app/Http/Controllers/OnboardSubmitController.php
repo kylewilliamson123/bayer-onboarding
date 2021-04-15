@@ -46,4 +46,21 @@ class OnboardSubmitController extends Controller
         return redirect("/dashboard")->with( ['popup' => 'Record Deleted.'] );
     }
 
+    public function editstatus($id)    {
+        // Get row in table
+        
+
+        $onboard = new_hire::find($id);
+
+        // Update all values
+        $onboard->CompletionStatus = "finished";
+        $onboard->save();
+
+    
+        
+  
+        return redirect("/finished");
+   }
+   
+
 }

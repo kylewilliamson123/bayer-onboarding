@@ -36,6 +36,7 @@ Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('/onboard/{id}', 'OnboardController@index')->name('onboard');
 Route::post('/onboardUpdate/{id}', 'OnboardSubmitController@update')->name('onboardUpdate');
 Route::post('/onboardDelete/{id}', 'OnboardSubmitController@delete')->name('onboardDelete');
+Route::post('/onboardeditstatus/{id}', 'OnboardSubmitController@editstatus')->name('editstatus');
 
 // Form routes
 Route::get('/form', 'FormController@index')->name('form');
@@ -44,3 +45,5 @@ Route::post('/formSubmit', 'SubmitController@insert')->name('formSubmit');
 // Finished onboard routes
 Route::get('/finished', 'FinishedController@index')->name('finished');
 Route::get('/finishedsearch', 'FinishedController@index')->name('finished');
+
+

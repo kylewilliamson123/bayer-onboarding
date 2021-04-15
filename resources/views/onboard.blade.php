@@ -30,7 +30,7 @@
                             <th>Value</th>
                         </thead>
                         <tbody class="bg-light">
-                        <tr>
+                            <tr>
                                 <td>First Name</td>
                                 <td><input name="FirstName" type="text" value="{{ $newHire->FirstName }}"></td>
                             </tr>
@@ -130,15 +130,18 @@
                     </select>
 
                     <input type="submit" class="btn btn-light mb-2 w-100" value="Save All Changes">
-                    <button type="button" class="btn btn-danger w-100" data-toggle="modal" data-target="#deleteConfirmModal">
-                        Delete
-                    </button>
+                    <button type="button" class="btn btn-success w-100" data-toggle="modal" data-target="#finishConfirmModal">Finish</button>
+                    <button type="button" class="btn btn-danger w-100" data-toggle="modal" data-target="#deleteConfirmModal">Delete</button>
                 </div>
             </div>
 
         </div>
 
     </form>
+    <form action = "{{ action('OnboardSubmitController@editstatus', $newHire->id) }}" method = "post" >
+                    @csrf
+                    <input type="submit" class="btn btn-light mb-2 w-100" value="Finish Onboard">
+                    </form>
 </div>
 
 
@@ -160,6 +163,30 @@
                 <form method="post" action="{{ action('OnboardSubmitController@delete', $newHire->id) }}">
                     @csrf
                     <input type="submit" class="btn btn-danger" value="Delete Record">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- finish Confirmation Modal -->
+<div class="modal fade" id="finishConfirmModal" tabindex="-1" role="dialog" aria-labelledby="finishModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to Finish this Onboard?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <form action = "{{ action('OnboardSubmitController@editstatus', $newHire->id) }}" method = "post" >
+                    @csrf
+                    <input type="submit" class="btn btn-light mb-2 w-100" value="Finish Onboard">
                 </form>
             </div>
         </div>
