@@ -26,9 +26,10 @@ class FinishedController extends Controller
         //grab the search in a variable
 
         //the loop to store the results in $results
-        $results = new_hire::where('FirstName','LIKE','%'.$search .'%')
-        ->orWhere('LastName','LIKE','%'.$search.'%')
-        ->orWhere('CWID','LIKE','%'.$search.'%')->get();
+        $results = new_hire::where([['FirstName','LIKE','%'.$search .'%'], ['CompletionStatus', '=', 'finished']])
+        ->orWhere([['LastName','LIKE','%'.$search.'%'], ['CompletionStatus', '=', 'finished']])
+        ->orWhere([['CWID','LIKE','%'.$search.'%'], ['CompletionStatus', '=', 'finished']])
+        ->get();
 
         //if there is more than 1 result, display
         if(isset($results))

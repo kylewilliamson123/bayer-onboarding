@@ -130,7 +130,15 @@
                     </select>
 
                     <input type="submit" class="btn btn-light mb-2 w-100" value="Save All Changes">
-                    <button type="button" class="btn btn-success w-100" data-toggle="modal" data-target="#finishConfirmModal">Finish</button>
+
+                    <button type="button" class="btn btn-success mb-2 w-100" data-toggle="modal" data-target="#finishConfirmModal">
+                        @if ($newHire->CompletionStatus == "Open")
+                        Finish this Onboard
+                        @else
+                        Open this Onboard
+                        @endif
+                    </button>
+
                     <button type="button" class="btn btn-danger w-100" data-toggle="modal" data-target="#deleteConfirmModal">Delete</button>
                 </div>
             </div>
@@ -150,7 +158,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Delete</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -174,19 +182,25 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">
+                    @if ($newHire->CompletionStatus == "Open")
+                    Finish
+                    @else
+                    Open
+                    @endif
+                </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                Are you sure you want to Finish this Onboard?
+                Are you sure you want to change the status?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <form action = "{{ action('OnboardSubmitController@editstatus', $newHire->id) }}" method = "post" >
                     @csrf
-                    <input type="submit" class="btn btn-light mb-2 w-100" value="Finish Onboard">
+                    <input type="submit" class="btn btn-success" value="Change">
                 </form>
             </div>
         </div>
